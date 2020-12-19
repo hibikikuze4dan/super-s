@@ -4,7 +4,7 @@ import React from "react";
 const Title = ({ text }) => {
   return (
     <Grid container justify="center">
-      <Typography>{text}</Typography>
+      <Typography variant="h2">{text}</Typography>
     </Grid>
   );
 };

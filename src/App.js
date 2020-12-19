@@ -3,13 +3,16 @@ import logo from "./logo.svg";
 import { Counter } from "./features/counter/Counter";
 import "./App.css";
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
+import Opener from "./components/opener";
 
 function App() {
   return (
     <div className="App">
       <HashRouter>
         <Switch>
-          <Route path="/opening">Hello</Route>
+          <Route path="/opening">
+            <Opener />
+          </Route>
           <Route path="/green">Grred</Route>
           <Route path="/" render={() => <Redirect to="/opening" />} />
         </Switch>

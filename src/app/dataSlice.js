@@ -1,6 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSelector, createSlice } from "@reduxjs/toolkit";
 import { last } from "lodash";
 import { cyoaData } from "../data";
+import { getLocation } from "./navigationSlice";
 
 export const dataSlice = createSlice({
   name: "data",
@@ -8,6 +9,14 @@ export const dataSlice = createSlice({
   reducers: {},
 });
 
-export const getSections = (state) => state.sections;
+export const getSections = (state) => state.data.sections;
+
+export const getCurrentSection = createSelector(
+  getLocation,
+  getSections,
+  (location, sections) => {
+    return sections[location];
+  }
+);
 
 export default dataSlice.reducer;

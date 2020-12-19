@@ -1,10 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { last } from 'lodash';
+import { createSlice } from "@reduxjs/toolkit";
+import { last } from "lodash";
 
 export const navigationSlice = createSlice({
-  name: 'navigation',
+  name: "navigation",
   initialState: {
-    location: last(window.location.href.split('/')),
+    location: last(window.location.href.split("/")),
   },
   reducers: {
     updateLocation: (state, action) => {
@@ -15,6 +15,6 @@ export const navigationSlice = createSlice({
 
 export const { updateLocation } = navigationSlice.actions;
 
-export const getLocation = state => state.location;
+export const getLocation = (state) => state.navigation.location;
 
 export default navigationSlice.reducer;
