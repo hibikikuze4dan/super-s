@@ -4,7 +4,9 @@ import React from "react";
 const Title = ({ text }) => {
   return (
     <Grid container justify="center">
-      <Typography variant="h2">{text}</Typography>
+      <Typography variant="h2" style={{ textTransform: "uppercase" }}>
+        {text}
+      </Typography>
     </Grid>
   );
 };

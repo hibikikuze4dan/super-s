@@ -11,7 +11,7 @@ const NavDrawerButton = () => {
         <Menu fontSize="large" />
       </IconButton>
       <Drawer open={open} onClose={() => toggleOpen(!open)}>
-        <NavDrawerLinks />
+        <NavDrawerLinks handleSelect={toggleOpen} />
       </Drawer>
     </>
   );

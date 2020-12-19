@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { getSectionKeys } from "../../app/dataSlice";
 import { updateLocation } from "../../app/navigationSlice";
 
-const NavDrawerLinks = () => {
+const NavDrawerLinks = ({ handleSelect }) => {
   const dispatch = useDispatch();
   const links = useSelector(getSectionKeys);
   return (
@@ -15,7 +15,10 @@ const NavDrawerLinks = () => {
           <Grid item xs={12} key={`navDrawerLinks-link-${ind}`}>
             <Button
               fullWidth
-              onClick={() => dispatch(updateLocation(link))}
+              onClick={() => {
+                dispatch(updateLocation(link));
+                handleSelect(false);
+              }}
               component={Link}
               to={`/${link}`}
             >

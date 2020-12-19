@@ -1,6 +1,7 @@
 import { Grid, Typography } from "@material-ui/core";
 import Interweave from "interweave";
-import React from "react";
+import React, { Fragment } from "react";
+import { PowerPointsMatcher } from "./Matcher";
 
 const Description = ({ text }) => {
   return (
@@ -8,15 +9,18 @@ const Description = ({ text }) => {
       <Typography>
         {text.map((str, ind) => {
           return (
-            <>
-              <Interweave key={`interweave-desc-${ind}`} content={str} />
+            <Fragment key={`interweave-desc-${ind}`}>
+              <Interweave
+                content={str}
+                matchers={[new PowerPointsMatcher("PP")]}
+              />
               {text.length - 1 !== ind && (
                 <>
                   <br />
                   <br />
                 </>
               )}
-            </>
+            </Fragment>
           );
         })}
       </Typography>
