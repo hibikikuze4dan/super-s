@@ -11,6 +11,10 @@ export const dataSlice = createSlice({
 
 export const getSections = (state) => state.data.sections;
 
+export const getSectionKeys = createSelector(getSections, (sections) => {
+  return Object.keys(sections);
+});
+
 export const getCurrentSection = createSelector(
   getLocation,
   getSections,

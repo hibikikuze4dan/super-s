@@ -6,6 +6,56 @@
       "description": [
         "Hi hi! Welcome to the Halls of the Lightbringer! Before you ask, I am not the Lightbringer and no you may not speak to the Lightbringer. My name is Illendria and- WHAT?! Have you never heard of the Lightbringer? Well, I know you're mortal and all, but WOW... I'm surprised, I guess I have some explaining to do then. You see the Lightbringer is this totally amazing and dreamy goddess who turns puny mortals into great heroes and sends them off into the universe to bring order, niceness and all that good stuff. The Lightbringer was wounded in an epic battle that prevented the destruction of the multiverse, I participated too you know, so you're welcome, no need to thank me. Aaaanyways- since the Lighbringer is still wounded she won't be able to personally train you. So I Illendria, the goddess of love and desire will act as the Lightbringers stand-in. But I have better things to do than teach you like morality lessons that build character, cultivate inner strength, prevent you from being corrupted by evil and bla bla bla. so l'm just going to zap you with superpowers instead. What do you mean I sound super frivolous and I'm not taking this seriously? Do you need those lessons? Like are you a bad person or something? Because I could totally find another mortal and zap them with superpowers instead. Just kidding!~ That was actually a test to see if you were a good person and you passed with flying colors! Not to brag, but I have watched like a lot of superhero movies from your world to prepare me for this hero business, so I am totally knowing what I am doing. Like Obi-Wan Kenobi once said, with power comes great responsibility. My knowledge of your world is pretty impressive, right? What do you mean Uncle Ben said that? Uncle Ben Kenobi am I right? Now stand still and l'll start the zappening!"
       ]
+    },
+    "gender": {
+      "title": "Gender",
+      "description": [
+        "Wait! I feel like I am forgetting something very important. Hmm, the most important thing about heroes is not their superpowers... no, it's their looks! Yes! I have never seen an ugly superhero! Who would want to get saved by a total uggo anyways? Not me, that's for sure. So let's get you a total makeover first. So what gender do you want to be? Like you don't have to be the gender you were born with, actually, I prefer you didn't, it really doesn't suit you you know. On second thought, this makeover is like reeeeally delicate and it will like influence your superpowers. Yes, you get like Power Points for choosing how your new body will look like. Some options will grant you more Power Points than others and then you will spend your Power Points to purchase superpowers. Yes, that is totally how this works and it's not something I just made up! I also don't want your new body to get all wrinkly and old so l'll grant you eternal youth. Like it would be such a waste for me to make you look beautiful and then after a couple of years you would just get ugly again. I almost forgot something else, it is super important for a superhero to have weaknesses and flaws. So most options will have 1 connected drawback. While the drawbacks are totally optional, they will grant you Power Points if you take them. You can take drawbacks that are not connected to the options you choose. But if you do take a drawback that is connected to an option you have chosen you will gain 3 additional Power Points. Some options and drawbacks also have requirements which you must obey in order to pick them."
+      ],
+      "choices": [
+        {
+          "title": "Female",
+          "description": [
+            "I don't do makeovers half-heartedly so I will not turn you into a girl, I will turn you into THE GIRL, your beauty will be divine. As a girl, you will inspire lust and desire in all who gaze upon you. Everyone will want you, yeah that means the supervillains, especially the supervillains. They will want to rape and ravage you. No, sorry, I won't settle for anything less than divine beauty! If this option caused you to change gender you gain 10 additional Power Points."
+          ],
+          "points": {
+            "power": 20
+          },
+          "connectedDrawback": "Girly"
+        },
+        {
+          "title": "Male",
+          "description": [
+            "Yeah, and there is also the option to be a man... It's not like I don't like men but let's just say I enjoy their penises a lot more than I enjoy their looks. I'm also not very good at flesh sculpting males, I won't be able to make you as beautiful as if you chose to be a girl, but l'll do my best. Which will probably make you the best looking man on the planet, but your looks won't be like divine or anything. If this option caused you to change gender you gain 10 additional Power Points."
+          ],
+          "points": {
+            "power": 20
+          },
+          "connectedDrawback": "Chivalrous"
+        }
+      ]
     }
-  }
+  },
+  "drawbacks": [
+    {
+      "title": "Girly",
+      "description": [
+        "Your subconscious mind will be altered to make your body language and the way you speak super feminine. You'll act like a stereotypical girl and you will also start to like girly things, like makeup and pretty dresses."
+      ],
+      "points": {
+        "power": 8
+      },
+      "connectedChoice": "Female"
+    },
+    {
+      "title": "Chivalrous",
+      "description": [
+        "Your subconscious mind will be altered to make you act like a perfect gentleman. You will be gallant, courteous and polite. Acting dishonorably, especially towards women becomes unthinkable to you."
+      ],
+      "points": {
+        "power": 10
+      },
+      "connectedChoice": "Male"
+    }
+  ]
 }
