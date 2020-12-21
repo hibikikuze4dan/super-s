@@ -13,9 +13,8 @@ function App() {
       <HashRouter>
         <NaviationBar />
         <Switch>
-          <div style={{ padding: "64px 8px" }}>
+          <div style={{ padding: "64px 8px", overflowX: "hidden" }}>
             <SectionRoutes />
-            <Route path="/green">Grred</Route>
             <Route path="/" render={() => <Redirect to="/opening" />} />
           </div>
         </Switch>

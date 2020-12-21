@@ -1,5 +1,5 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
-import { last } from "lodash";
+import { reduce, last, sum, flatMap } from "lodash";
 import { getLocation } from "./navigationSlice";
 
 export const choicesSlice = createSlice({
@@ -8,7 +8,11 @@ export const choicesSlice = createSlice({
     sectionSpecific: {
       genderChange: true,
     },
-    gender: {},
+    gender: {
+      points: {
+        power: 0,
+      },
+    },
     drawbacks: [],
   },
   reducers: {
@@ -53,6 +57,32 @@ export const getGenderChange = createSelector(
 
 export const getChoices = (state) => state.choices;
 
+export const getChoicesExcludingDrawbacks = createSelector(
+  getChoices,
+  (choices) => {
+    const filters = ["drawbacks", "sectionSpecific"];
+    return reduce(
+      choices,
+      (acc, choiceSection, key) => {
+        if (!filters.includes(key)) {
+          acc[key] = choiceSection;
+        }
+        return acc;
+      },
+      {}
+    );
+  }
+);
+
+export const getChoicesExcludingDrawbacksAsFlatArray = createSelector(
+  getChoicesExcludingDrawbacks,
+  (choices) => {
+    return flatMap(choices, (choiceSection) => {
+      return Array.isArray(choiceSection) ? choiceSection : [choiceSection];
+    });
+  }
+);
+
 export const getGender = (state) => state.choices.gender;
 
 export const getDrawbacks = (state) => state.choices.drawbacks;
@@ -70,6 +100,49 @@ export const getCurrentLocationsChoicesAsArray = createSelector(
   (currentChoices) => {
     return Array.isArray(currentChoices) ? currentChoices : [currentChoices];
   }
+);
+
+const genderPointsHandler = createSelector(
+  getGender,
+  getGenderChange,
+  (gender, isChangingGender) => {
+    if (isChangingGender && gender?.title) {
+      return gender.points.power + 10;
+    }
+    return gender.points.power;
+  }
+);
+
+const drawbacksPointHandler = createSelector(
+  getDrawbacks,
+  getChoicesExcludingDrawbacksAsFlatArray,
+  (drawbacks, choicesExcludingDrawbacks) => {
+    const choicesExcludingDrawbacksTitles = choicesExcludingDrawbacks.map(
+      (choice) => choice.title
+    );
+    return sum(
+      drawbacks.map((drawback) => {
+        if (
+          choicesExcludingDrawbacksTitles.includes(drawback.connectedChoice)
+        ) {
+          return drawback.points.power + 3;
+        }
+        return drawback.points.power;
+      })
+    );
+  }
+);
+
+const compilePoints = (state) => {
+  const points = {
+    power: sum([0, genderPointsHandler(state), drawbacksPointHandler(state)]),
+  };
+  return points;
+};
+
+export const getCompiledPoints = createSelector(
+  compilePoints,
+  (points) => points
 );
 
 export default choicesSlice.reducer;
