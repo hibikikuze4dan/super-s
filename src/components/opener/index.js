@@ -9,7 +9,7 @@ const Opener = () => {
   const { title, description } = useSelector(getCurrentSection);
 
   return (
-    <Grid container spacing={4}>
+    <Grid container spacing={4} style={{ backgroundColor: "#bb001cff" }}>
       <Grid item xs={12}>
         <Title text={title} />
       </Grid>

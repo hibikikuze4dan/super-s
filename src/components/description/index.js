@@ -3,10 +3,10 @@ import Interweave from "interweave";
 import React, { Fragment } from "react";
 import { PowerPointsMatcher } from "./Matcher";
 
-const Description = ({ text }) => {
+const Description = ({ text, isChoice }) => {
   return (
     <Grid container justify="center">
-      <Typography>
+      <Typography style={{ color: "white" }}>
         {text.map((str, ind) => {
           return (
             <Fragment key={`interweave-desc-${ind}`}>

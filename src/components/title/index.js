@@ -1,10 +1,13 @@
 import { Grid, Typography } from "@material-ui/core";
 import React from "react";
 
-const Title = ({ text }) => {
+const Title = ({ text, isChoice }) => {
   return (
     <Grid container justify="center">
-      <Typography variant="h2" style={{ textTransform: "uppercase" }}>
+      <Typography
+        variant={isChoice ? "h4" : "h2"}
+        style={{ textTransform: "uppercase", color: "white" }}
+      >
         {text}
       </Typography>
     </Grid>
@@ -13,6 +16,7 @@ const Title = ({ text }) => {
 
 Title.defaultProps = {
   text: "",
+  isChoice: false,
 };
 
 export default Title;
