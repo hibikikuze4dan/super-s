@@ -6,7 +6,11 @@ const Title = ({ text, isChoice }) => {
     <Grid container justify="center">
       <Typography
         variant={isChoice ? "h4" : "h2"}
-        style={{ textTransform: "uppercase", color: "white" }}
+        style={{
+          textTransform: "uppercase",
+          color: "white",
+          fontSize: isChoice ? "2.125rem" : "3rem",
+        }}
       >
         {text}
       </Typography>

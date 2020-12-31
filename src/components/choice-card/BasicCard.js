@@ -5,7 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   getCurrentLocationsChoicesAsArray,
   getDrawbacks,
+  setAppearance,
   setGender,
+  setHairColor,
   updateDrawbacks,
 } from "../../app/choicesSlice";
 import { getLocation } from "../../app/navigationSlice";
@@ -15,6 +17,8 @@ import CardStructure from "./CardStructure";
 
 const actionsByLocation = {
   gender: setGender,
+  appearance: setAppearance,
+  hair_color: setHairColor,
 };
 
 const BasicCard = ({ title, ...otherProps }) => {

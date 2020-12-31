@@ -1,4 +1,5 @@
 import { Button, Grid } from "@material-ui/core";
+import { startCase } from "lodash";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -22,7 +23,7 @@ const NavDrawerLinks = ({ handleSelect }) => {
               component={Link}
               to={`/${link}`}
             >
-              {link}
+              {startCase(link)}
             </Button>
           </Grid>
         );

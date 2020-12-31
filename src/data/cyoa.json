@@ -35,6 +35,114 @@
           "connectedDrawback": "Chivalrous"
         }
       ]
+    },
+    "appearance": {
+      "title": "Appearance",
+      "description": [
+        "What about some special features, like it would be totally boring if you looked like every other human. Like how lame would that be?"
+      ],
+      "cols": 3,
+      "choices": [
+        {
+          "title": "Human",
+          "description": [
+            "Seriously? Do you want to be a boring human? What's the point in being a superhero if you're just going to look like everyone else. Stop being lame!"
+          ],
+          "points": {
+            "power": 0
+          },
+          "connectedDrawback": "Unnatural Skin Color"
+        },
+        {
+          "title": "Metahuman",
+          "description": [
+            "You must choose to gain at least 1 minor biologically impossible body feature. For example, your hair is made out of slime, your eyes glow red or your hair is made out of harmless fire."
+          ],
+          "points": {
+            "power": 4
+          },
+          "connectedDrawback": "Otherworldly"
+        },
+        {
+          "title": "Humanoid",
+          "description": [
+            "What about some non-human features? You can choose any non-human features you want, but must choose at least 1 feature. Like squirrel ears and a tail, vampire fangs, elf ears, antennas or tentacle hair."
+          ],
+          "points": {
+            "power": 3
+          },
+          "connectedDrawback": "Animal Genitals"
+        }
+      ]
+    },
+    "hair_color": {
+      "title": "Hair Color",
+      "description": [
+        "This is gonna be 1 of the most important questions l'll ask you. Ok, take a deep breath and prepare yourself. What color do you want your hair to be? Like your hair color is super important for first impressions and the kind of vibes you want to send out."
+      ],
+      "cols": 3,
+      "choices": [
+        {
+          "title": "Blonde",
+          "description": [
+            "Blondes are often thought of as party girls. Seen as happy, cheerful, fun and social. However, they are also seen as vain, dumb and promiscuous compared to other hair colors. Totally undeserved if you ask me!"
+          ],
+          "points": {
+            "power": 2
+          },
+          "connectedDrawback": "Airhead"
+        },
+        {
+          "title": "Brown",
+          "description": [
+            "Brunettes have a reputation for being sophisticated, intelligent and mature. But they are also viewd as boring and plain compared to their blonde, red, white and raven-haired counterparts."
+          ],
+          "points": {
+            "power": 0
+          },
+          "connectedDrawback": "Four Eyes"
+        },
+        {
+          "title": "Black",
+          "description": [
+            "Mysterious, exotic and reserved are just some traits that are associated with black hair. On the other hand, black haired people are thought to be more untrustworthy, cold and ruthless than people of other hair colors."
+          ],
+          "points": {
+            "power": 0
+          },
+          "connectedDrawback": "Sadist"
+        },
+        {
+          "title": "Red",
+          "description": [
+            "People tend to see redheads as unique, interesting, passionate, loving and sensual! On the other hand, they get a bad rap for being aggressive and promiscuous."
+          ],
+          "points": {
+            "power": 2
+          },
+          "connectedDrawback": "Slut"
+        },
+        {
+          "title": "White",
+          "description": [
+            "White hair is associated with purity, virtue, wisdom and maturity. However white haired people are also viewed as cold, distant and introvert."
+          ],
+          "points": {
+            "power": 1
+          },
+          "connectedDrawback": "Emotionless"
+        },
+        {
+          "title": "Unnatural",
+          "description": [
+            "Why settle for a mortal hair color? You can have any hair color you want! Pink hair, blue hair, green hair or why not rainbow colored hair? The sky is the limit!"
+          ],
+          "points": {
+            "power": 3
+          },
+          "connectedDrawback": "Daddy Issues"
+        }
+      ]
     }
   },
   "drawbacks": [
@@ -57,6 +165,118 @@
         "power": 10
       },
       "connectedChoice": "Male"
+    },
+    {
+      "title": "Unnatural Skin Color",
+      "description": [
+        "How about we just change your skin color? That would be totally aaaawseome!- Just pick any unnatural skin color you want and l'll work my magic on you."
+      ],
+      "points": {
+        "power": 8
+      },
+      "connectedChoice": "Human"
+    },
+    {
+      "title": "Otherworldly",
+      "description": [
+        "You must choose to gain at least 1 major biologically impossible body feature which will affect most of your body. It can be the same as the minor feature you choose from Metahuman, but on a larger scale."
+      ],
+      "points": {
+        "power": 15
+      },
+      "connectedChoice": "Metahuman"
+    },
+    {
+      "title": "Animal Genitals",
+      "description": [
+        "Instead of having a human cock, you will have the penis of an animal. You may choose the animal, but I highly recommend that you go with a horse cock or a horse pussy!"
+      ],
+      "points": {
+        "power": 10
+      },
+      "connectedChoice": "Humanoid"
+    },
+    {
+      "title": "Airhead",
+      "description": [
+        "You're going to be a bit dumber. You'll often find yourself lose your train of thought and forget things a lot, but that's totally fine, being a bit ditzy is totally adorbs! Being smart is so overrated."
+      ],
+      "points": {
+        "power": 12
+      },
+      "connectedChoice": "Blonde"
+    },
+    {
+      "title": "Four Eyes",
+      "description": [
+        "You will get really bad eyesight. Like you will need to wear glasses to see anything. Your eyesight can never get better by magic, technology, etc. While wearing your superhero uniform you can uses lenses, but otherwise, lenses won't work."
+      ],
+      "points": {
+        "power": 7
+      },
+      "connectedChoice": "Brown"
+    },
+    {
+      "title": "Sadist",
+      "description": [
+        "You will become a huge sadist, nothing will turn you on more than seeing others suffer, especially supervillains and their goons. Making them scream and beg for mercy will feel like the best thing ever."
+      ],
+      "points": {
+        "power": 10
+      },
+      "connectedChoice": "Black"
+    },
+    {
+      "title": "Slut",
+      "description": [
+        "Your libido will be boosted to slut levels. You'll crave sex on a daily basis and sex it will never be far from your thoughts. If you go to0 long without sex you'll start to act like a bitch in heat."
+      ],
+      "points": {
+        "power": 10
+      },
+      "connectedChoice": "Red"
+    },
+    {
+      "title": "Emotionless",
+      "description": [
+        "You will become unable to express emotions with your face and your voice. You'll have the best poker face in the world and you will always speak in a flat monotone voice."
+      ],
+      "points": {
+        "power": 10
+      },
+      "connectedChoice": "White"
+    },
+    {
+      "title": "Daddy Issues",
+      "description": [
+        "You absolutely hate and despise men, yes all men. You will instinctively act like a passive-aggressive little bitch whenever you interact with a man, be it the president or a starving homeless man."
+      ],
+      "points": {
+        "power": 10
+      },
+      "connectedChoice": "Unnatural"
     }
-  ]
+  ],
+  "skeletons": {
+    "basic": {
+      "title": "",
+      "description": [
+        ""
+      ],
+      "points": {
+        "power": 0
+      },
+      "connectedDrawback": ""
+    },
+    "drawback": {
+      "title": "",
+      "description": [
+        ""
+      ],
+      "points": {
+        "power": 0
+      },
+      "connectedChoice": ""
+    }
+  }
 }
