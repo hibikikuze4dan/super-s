@@ -242,6 +242,75 @@
           "connectedDrawback": "Hungry Hippo"
         }
       ]
+    },
+    "body_size": {
+      "title": "Body Size",
+      "description": [
+        "Soooooo- how big do you want to be? *Giggle* I meant your body size, but don't worry we will get to that later."
+      ],
+      "cols": 3,
+      "choices": [
+        {
+          "title": "Tiny",
+          "description": [
+            "It would be really adorable if you were super tiny like a fairy. It might be a bit hard to fight crime being the size of a doll, but it definitely would look cute as fuck!"
+          ],
+          "points": {
+            "power": 10
+          },
+          "connectedDrawback": "Submissive"
+        },
+        {
+          "title": "Small",
+          "description": [
+            "Perhaps you want to be a bit taller? How about the size of a small child? It would make you really approachable, but some might not take you seriously because of your height... or lack of it."
+          ],
+          "points": {
+            "power": 3
+          },
+          "connectedDrawback": "Submissive"
+        },
+        {
+          "title": "Short",
+          "description": [
+            "How about being shorter than the average person of your gender? Bigger is not always better. Smaller is cuter you know!"
+          ],
+          "points": {
+            "power": 3
+          },
+          "connectedDrawback": "Submissive"
+        },
+        {
+          "title": "Average",
+          "description": [
+            "Really? You want to be average-sized for your gender? That's soooo boring! But I guess it would be easier to keep your identity hidden if you didn't have some crazy height that made you stand out."
+          ],
+          "points": {
+            "power": 0
+          },
+          "connectedDrawback": "Switch"
+        },
+        {
+          "title": "Tall",
+          "description": [
+            "Would you like to be really tall? You could be tall like an amazonian warrior, you would stand head and shoulders above the tallest of men. Being this tall would make you a bit intimidating to approach."
+          ],
+          "points": {
+            "power": 1
+          },
+          "connectedDrawback": "Dominant"
+        },
+        {
+          "title": "Colossal",
+          "description": [
+            "I have this crazy idea, how about I make you big as a giant? That's like twice the size of a human. You would tower over your fellow men. I think it's really fitting for a superhero since they should be larger than life."
+          ],
+          "points": {
+            "power": 8
+          },
+          "connectedDrawback": "Dominant"
+        }
+      ]
     }
   },
   "drawbacks": [
@@ -253,7 +322,7 @@
       "points": {
         "power": 8
       },
-      "connectedChoice": "Female"
+      "connectedChoices": "Female"
     },
     {
       "title": "Chivalrous",
@@ -263,7 +332,7 @@
       "points": {
         "power": 10
       },
-      "connectedChoice": "Male"
+      "connectedChoices": "Male"
     },
     {
       "title": "Unnatural Skin Color",
@@ -273,7 +342,7 @@
       "points": {
         "power": 8
       },
-      "connectedChoice": "Human"
+      "connectedChoices": "Human"
     },
     {
       "title": "Otherworldly",
@@ -283,7 +352,7 @@
       "points": {
         "power": 15
       },
-      "connectedChoice": "Metahuman"
+      "connectedChoices": "Metahuman"
     },
     {
       "title": "Animal Genitals",
@@ -293,7 +362,7 @@
       "points": {
         "power": 10
       },
-      "connectedChoice": "Humanoid"
+      "connectedChoices": "Humanoid"
     },
     {
       "title": "Airhead",
@@ -303,7 +372,7 @@
       "points": {
         "power": 12
       },
-      "connectedChoice": "Blonde"
+      "connectedChoices": "Blonde"
     },
     {
       "title": "Four Eyes",
@@ -313,7 +382,7 @@
       "points": {
         "power": 7
       },
-      "connectedChoice": "Brown"
+      "connectedChoices": "Brown"
     },
     {
       "title": "Sadist",
@@ -323,7 +392,7 @@
       "points": {
         "power": 10
       },
-      "connectedChoice": "Black"
+      "connectedChoices": "Black"
     },
     {
       "title": "Slut",
@@ -333,7 +402,7 @@
       "points": {
         "power": 10
       },
-      "connectedChoice": "Red"
+      "connectedChoices": "Red"
     },
     {
       "title": "Emotionless",
@@ -343,7 +412,7 @@
       "points": {
         "power": 10
       },
-      "connectedChoice": "White"
+      "connectedChoices": "White"
     },
     {
       "title": "Daddy Issues",
@@ -353,7 +422,7 @@
       "points": {
         "power": 10
       },
-      "connectedChoice": "Unnatural"
+      "connectedChoices": "Unnatural"
     },
     {
       "title": "Hairless",
@@ -364,7 +433,7 @@
         "power": 3
       },
       "exclude": ["Hairy"],
-      "connectedChoice": "Youthful"
+      "connectedChoices": "Youthful"
     },
     {
       "title": "Freckles",
@@ -375,7 +444,7 @@
         "power": 3
       },
       "exclude": [],
-      "connectedChoice": "Petite"
+      "connectedChoices": "Petite"
     },
     {
       "title": "Plump Lips",
@@ -386,7 +455,7 @@
         "power": 7
       },
       "exclude": [],
-      "connectedChoice": "Curvacious"
+      "connectedChoices": "Curvacious"
     },
     {
       "title": "Basic Bitch",
@@ -397,7 +466,7 @@
         "power": 10
       },
       "exclude": [],
-      "connectedChoice": "Average"
+      "connectedChoices": "Average"
     },
     {
       "title": "Workout Whore",
@@ -408,7 +477,7 @@
         "power": 8
       },
       "exclude": ["Chubby", "Fat", "Fat Distribution"],
-      "connectedChoice": "Fit"
+      "connectedChoices": "Fit"
     },
     {
       "title": "Hairy",
@@ -419,7 +488,7 @@
         "power": 5
       },
       "exclude": ["Hairless"],
-      "connectedChoice": "Muscular"
+      "connectedChoices": "Muscular"
     },
     {
       "title": "Crossdresser",
@@ -430,7 +499,7 @@
         "power": 10
       },
       "exclude": [],
-      "connectedChoice": "Androgenous"
+      "connectedChoices": "Androgenous"
     },
     {
       "title": "Fat Distribution",
@@ -441,7 +510,7 @@
         "power": 5
       },
       "exclude": ["Workout Whore"],
-      "connectedChoice": "Chubby"
+      "connectedChoices": "Chubby"
     },
     {
       "title": "Hungry Hippo",
@@ -452,7 +521,40 @@
         "power": 10
       },
       "exclude": [],
-      "connectedChoice": "Fat"
+      "connectedChoices": "Fat"
+    },
+    {
+      "title": "Submissive",
+      "description": [
+        "You will become more compliant, obedient, passive and less independent. It will feel good to follow orders, serve and please others, not just as a hero but in the bedroom too, especially in the bedroom. In a team of superheroes and superheroines or in a joint effort you will naturally look for guidance and a strong leader to follow. You'll also prefer to take on a supporting role rather than a leading role. While you could strike out as a solo hero, you would be much more confident being a member of a hero team or taking the role of a sidekick."
+      ],
+      "points": {
+        "power": 10
+      },
+      "exclude": ["Dominant", "Switch"],
+      "connectedChoices": ["Tiny", "Small", "Short"]
+    },
+    {
+      "title": "Switch",
+      "description": [
+        "You will randomly switch between being super dominant and confident to being super submissive and meek. The change can happen at any time but it will have a tendency to happen when there is a comedic effect to it."
+      ],
+      "points": {
+        "power": 10
+      },
+      "exclude": ["Submissive", "Dominant"],
+      "connectedChoices": ["Average"]
+    },
+    {
+      "title": "Dominant",
+      "description": [
+        "You will become more confident, bold, strong-willed, decisive and dominant. You'll be a natural leader, but sometimes you might come across as bullish, domineering and bossy. Taking on a supportive role in a hero team or a joint effort will leave you feeling frustrated, to say the least. Becoming someone's sidekick would be almost unthinkable to you, you would second guess all of their decisions and would constantly try to convince them to do things your way. When it comes to sex you'll be just as dominant, if not more."
+      ],
+      "points": {
+        "power": 10
+      },
+      "exclude": ["Submissive", "Switch"],
+      "connectedChoices": ["Tall", "Colossal"]
     }
   ],
   "skeletons": {
@@ -474,7 +576,7 @@
       "points": {
         "power": 0
       },
-      "connectedChoice": ""
+      "connectedChoices": ""
     },
     "drawback_with_exclusions": {
       "title": "",
@@ -485,7 +587,7 @@
         "power": 0
       },
       "exclude": [""],
-      "connectedChoice": ""
+      "connectedChoices": ""
     }
   }
 }

@@ -28,6 +28,11 @@ export const choicesSlice = createSlice({
         power: 0,
       },
     },
+    body_size: {
+      points: {
+        power: 0,
+      },
+    },
     drawbacks: [],
   },
   reducers: {
@@ -48,6 +53,9 @@ export const choicesSlice = createSlice({
     },
     setBodyFigure: (state, action) => {
       state.body_figure = action.payload;
+    },
+    setBodySize: (state, action) => {
+      state.body_size = action.payload;
     },
     updateDrawbacks: (state, action) => {
       const titles = state.drawbacks.map((drawback) => drawback.title);
@@ -70,6 +78,7 @@ export const {
   setAppearance,
   setHairColor,
   setBodyFigure,
+  setBodySize,
   updateDrawbacks,
 } = choicesSlice.actions;
 
@@ -170,6 +179,8 @@ export const getHairColor = (state) => state.choices.hair_color;
 
 export const getBodyFigure = (state) => state.choices.body_figure;
 
+export const getBodySize = (state) => state.choices.body_size;
+
 export const getDrawbacks = (state) => state.choices.drawbacks;
 
 export const getCurrentLocationsChoices = createSelector(
@@ -208,7 +219,10 @@ const drawbacksPointHandler = createSelector(
     return sum(
       drawbacks.map((drawback) => {
         if (
-          choicesExcludingDrawbacksTitles.includes(drawback.connectedChoice)
+          choicesExcludingDrawbacksTitles.includes(drawback.connectedChoices) ||
+          drawback.connectedChoices.some((connectedChoice) =>
+            choicesExcludingDrawbacksTitles.includes(connectedChoice)
+          )
         ) {
           return drawback.points.power + 3;
         }

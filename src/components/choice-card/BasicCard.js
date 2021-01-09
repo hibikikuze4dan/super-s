@@ -8,6 +8,7 @@ import {
   getDrawbacks,
   setAppearance,
   setBodyFigure,
+  setBodySize,
   setGender,
   setHairColor,
   updateDrawbacks,
@@ -22,10 +23,10 @@ const actionsByLocation = {
   appearance: setAppearance,
   hair_color: setHairColor,
   body_figure: setBodyFigure,
+  body_size: setBodySize,
 };
 
 const checkIfDisabled = (drawback, currentChoices) => {
-  console.log(drawback, currentChoices);
   if (
     drawback?.exclude?.length === 0 ||
     drawback?.exclude?.length === undefined
@@ -33,21 +34,21 @@ const checkIfDisabled = (drawback, currentChoices) => {
     return false;
   }
   const currentChoicesTitles = currentChoices.map((choice) => choice.title);
-  console.log(currentChoicesTitles);
   return drawback.exclude.some((ex) => currentChoicesTitles.includes(ex));
 };
 
 const BasicCard = ({ title, ...otherProps }) => {
   const dispatch = useDispatch();
   const drawback = useSelector((state) =>
-    find(state.data.drawbacks, { connectedChoice: title })
+    find(state.data.drawbacks, (drawback) =>
+      drawback?.connectedChoices.includes(title)
+    )
   );
   const currentDrawbacks = useSelector(getDrawbacks);
   const location = useSelector(getLocation);
   const currentLocationChoices = useSelector(getCurrentLocationsChoicesAsArray);
   const allChoices = useSelector(getChoicesExcludingSectionSpecificAsFlatArray);
   const isDisabled = checkIfDisabled(drawback, allChoices);
-  console.log(isDisabled);
 
   return (
     <Grid container spacing={1} style={{ backgroundColor: "black" }}>
@@ -68,7 +69,7 @@ const BasicCard = ({ title, ...otherProps }) => {
         <CardStructure
           handleClick={() => dispatch(updateDrawbacks(drawback))}
           isDrawback
-          picked={getTitles(currentDrawbacks).includes(drawback.title)}
+          picked={getTitles(currentDrawbacks).includes(drawback?.title)}
           disabled={isDisabled}
           {...drawback}
         />

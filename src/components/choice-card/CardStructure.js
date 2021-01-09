@@ -5,6 +5,7 @@ import Title from "../title";
 import { lossOrGain } from "../../utils";
 import { map } from "lodash";
 import PointHandler from "./PointHandler";
+import ExcludeHandler from "./ExcludeHandler";
 
 const CardStructure = ({
   title,
@@ -14,16 +15,23 @@ const CardStructure = ({
   isDrawback,
   picked,
   disabled,
+  exclude,
   ...otherProps
 }) => {
   const normalColor = isDrawback ? "#292929ff" : "black";
+
   return (
     <Card style={{ backgroundColor: !picked ? normalColor : "green" }}>
       <Button onClick={handleClick} disabled={disabled}>
-        <Grid container>
+        <Grid container spacing={1}>
           <Grid item xs={12}>
             <Title text={title} isChoice />
           </Grid>
+          {exclude.length !== 0 && (
+            <Grid item xs={12}>
+              <ExcludeHandler excludes={exclude} />
+            </Grid>
+          )}
           <Grid item xs={12}>
             <PointHandler points={points} />
           </Grid>
@@ -37,6 +45,7 @@ const CardStructure = ({
 };
 
 CardStructure.defaultProps = {
+  exclude: [],
   disabled: false,
 };
 

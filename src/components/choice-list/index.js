@@ -3,19 +3,16 @@ import {
   GridList,
   GridListTile,
   isWidthUp,
-  withTheme,
   withWidth,
 } from "@material-ui/core";
 import React from "react";
 import { useSelector } from "react-redux";
 import { getCurrentSection } from "../../app/dataSlice";
 import BasicCard from "../choice-card/BasicCard";
-import CardStructure from "../choice-card/CardStructure";
 
 const ChoiceList = ({ width }) => {
   const { title, cols, choices } = useSelector(getCurrentSection);
 
-  console.log(width);
   return (
     <Grid container>
       <GridList
