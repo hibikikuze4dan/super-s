@@ -8,7 +8,7 @@ const NavDrawerButton = () => {
   return (
     <>
       <IconButton onClick={() => toggleOpen(!open)}>
-        <Menu fontSize="large" />
+        <Menu style={{ color: "white" }} fontSize="large" />
       </IconButton>
       <Drawer open={open} onClose={() => toggleOpen(!open)}>
         <NavDrawerLinks handleSelect={toggleOpen} />

@@ -13,12 +13,13 @@ const CardStructure = ({
   handleClick,
   isDrawback,
   picked,
+  disabled,
   ...otherProps
 }) => {
   const normalColor = isDrawback ? "#292929ff" : "black";
   return (
     <Card style={{ backgroundColor: !picked ? normalColor : "green" }}>
-      <Button onClick={handleClick}>
+      <Button onClick={handleClick} disabled={disabled}>
         <Grid container>
           <Grid item xs={12}>
             <Title text={title} isChoice />
@@ -33,6 +34,10 @@ const CardStructure = ({
       </Button>
     </Card>
   );
+};
+
+CardStructure.defaultProps = {
+  disabled: false,
 };
 
 export default CardStructure;

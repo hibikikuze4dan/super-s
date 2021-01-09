@@ -3,9 +3,11 @@ import { find } from "lodash";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  getChoicesExcludingSectionSpecificAsFlatArray,
   getCurrentLocationsChoicesAsArray,
   getDrawbacks,
   setAppearance,
+  setBodyFigure,
   setGender,
   setHairColor,
   updateDrawbacks,
@@ -19,6 +21,20 @@ const actionsByLocation = {
   gender: setGender,
   appearance: setAppearance,
   hair_color: setHairColor,
+  body_figure: setBodyFigure,
+};
+
+const checkIfDisabled = (drawback, currentChoices) => {
+  console.log(drawback, currentChoices);
+  if (
+    drawback?.exclude?.length === 0 ||
+    drawback?.exclude?.length === undefined
+  ) {
+    return false;
+  }
+  const currentChoicesTitles = currentChoices.map((choice) => choice.title);
+  console.log(currentChoicesTitles);
+  return drawback.exclude.some((ex) => currentChoicesTitles.includes(ex));
 };
 
 const BasicCard = ({ title, ...otherProps }) => {
@@ -28,7 +44,10 @@ const BasicCard = ({ title, ...otherProps }) => {
   );
   const currentDrawbacks = useSelector(getDrawbacks);
   const location = useSelector(getLocation);
-  const currentChoices = useSelector(getCurrentLocationsChoicesAsArray);
+  const currentLocationChoices = useSelector(getCurrentLocationsChoicesAsArray);
+  const allChoices = useSelector(getChoicesExcludingSectionSpecificAsFlatArray);
+  const isDisabled = checkIfDisabled(drawback, allChoices);
+  console.log(isDisabled);
 
   return (
     <Grid container spacing={1} style={{ backgroundColor: "black" }}>
@@ -38,7 +57,7 @@ const BasicCard = ({ title, ...otherProps }) => {
           handleClick={() =>
             dispatch(actionsByLocation[location]({ title, ...otherProps }))
           }
-          picked={getTitles(currentChoices).includes(title)}
+          picked={getTitles(currentLocationChoices).includes(title)}
           {...otherProps}
         />
       </Grid>
@@ -50,6 +69,7 @@ const BasicCard = ({ title, ...otherProps }) => {
           handleClick={() => dispatch(updateDrawbacks(drawback))}
           isDrawback
           picked={getTitles(currentDrawbacks).includes(drawback.title)}
+          disabled={isDisabled}
           {...drawback}
         />
       </Grid>

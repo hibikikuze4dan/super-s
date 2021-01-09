@@ -23,6 +23,11 @@ export const choicesSlice = createSlice({
         power: 0,
       },
     },
+    body_figure: {
+      points: {
+        power: 0,
+      },
+    },
     drawbacks: [],
   },
   reducers: {
@@ -40,6 +45,9 @@ export const choicesSlice = createSlice({
     },
     setHairColor: (state, action) => {
       state.hair_color = action.payload;
+    },
+    setBodyFigure: (state, action) => {
+      state.body_figure = action.payload;
     },
     updateDrawbacks: (state, action) => {
       const titles = state.drawbacks.map((drawback) => drawback.title);
@@ -61,6 +69,7 @@ export const {
   setGender,
   setAppearance,
   setHairColor,
+  setBodyFigure,
   updateDrawbacks,
 } = choicesSlice.actions;
 
@@ -74,6 +83,23 @@ export const getGenderChange = createSelector(
 );
 
 export const getChoices = (state) => state.choices;
+
+export const getChoicesExcludingSectionSpecific = createSelector(
+  getChoices,
+  (choices) => {
+    const filters = ["sectionSpecific"];
+    return reduce(
+      choices,
+      (acc, choiceSection, key) => {
+        if (!filters.includes(key)) {
+          acc[key] = choiceSection;
+        }
+        return acc;
+      },
+      {}
+    );
+  }
+);
 
 export const getChoicesExcludingDrawbacks = createSelector(
   getChoices,
@@ -109,6 +135,15 @@ export const getChoicesExcludingSpecialSections = createSelector(
   }
 );
 
+export const getChoicesExcludingSectionSpecificAsFlatArray = createSelector(
+  getChoicesExcludingSectionSpecific,
+  (choices) => {
+    return flatMap(choices, (choiceSection) => {
+      return Array.isArray(choiceSection) ? choiceSection : [choiceSection];
+    });
+  }
+);
+
 export const getChoicesExcludingDrawbacksAsFlatArray = createSelector(
   getChoicesExcludingDrawbacks,
   (choices) => {
@@ -132,6 +167,8 @@ export const getGender = (state) => state.choices.gender;
 export const getAppearance = (state) => state.choices.appearance;
 
 export const getHairColor = (state) => state.choices.hair_color;
+
+export const getBodyFigure = (state) => state.choices.body_figure;
 
 export const getDrawbacks = (state) => state.choices.drawbacks;
 

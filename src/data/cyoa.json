@@ -143,6 +143,105 @@
           "connectedDrawback": "Daddy Issues"
         }
       ]
+    },
+    "body_figure": {
+      "title": "Body Figure",
+      "description": [
+        "This hero business is much more fun than I realized! Anywaaaays- what kind of shape do you want your body to have? I'll make sure you will keep it forever, so you can eat whatever you want and never get fat and stuff."
+      ],
+      "cols": 3,
+      "choices": [
+        {
+          "title": "Youthful",
+          "description": [
+            "I can make you look super young and cute! You will be so adorable, just imagining it makes me want to pinch your little checks and hug you. On the downside, this body type will make bad guys want to do a lot more unsavory things to you than pinch your checks."
+          ],
+          "points": {
+            "power": 3
+          },
+          "connectedDrawback": "Hairless"
+        },
+        {
+          "title": "Petite",
+          "description": [
+            "How about I make you thin, lithe, delicate and dainty? You'll be the pinnacle of elegance and femininity, a statue of beauty! Your thin frame will make you look vulnerable, yet strong and courageous!"
+          ],
+          "points": {
+            "power": 1
+          },
+          "connectedDrawback": "Freckles"
+        },
+        {
+          "title": "Curvacious",
+          "description": [
+            "What about sexy? I could make your body voluptuous, lush, seductive and sultry. You will have curves at all the right places, thin waist, big hips, you know the deal, you'll be a total sex bomb. No one would be able to resist your ample body."
+          ],
+          "points": {
+            "power": 2
+          },
+          "connectedDrawback": "Plump Lips"
+        },
+        {
+          "title": "Average",
+          "description": [
+            "I call this body type the average body type since most people have this kind of body shape. But trust me, honey, I will make you look anything but average."
+          ],
+          "points": {
+            "power": 0
+          },
+          "connectedDrawback": "Basic Bitch"
+        },
+        {
+          "title": "Fit",
+          "description": [
+            "Would you like to have a slim, athletic, well-toned body? You will look strong and yet agile."
+          ],
+          "points": {
+            "power": 1
+          },
+          "connectedDrawback": "Workout Whore"
+        },
+        {
+          "title": "Muscular",
+          "description": [
+            "How about some big bulging muscles? How about a lot of big bulging muscles? I could give your body a herculean build that radiates strength and power."
+          ],
+          "points": {
+            "power": 2
+          },
+          "connectedDrawback": "Hairy"
+        },
+        {
+          "title": "Androgenous",
+          "description": [
+            "Wanna look feminine and masculine at the same time? People will have a hard time discerning your true gender."
+          ],
+          "points": {
+            "power": 3
+          },
+          "connectedDrawback": "Crossdresser"
+        },
+        {
+          "title": "Chubby",
+          "description": [
+            "How about some jelly on the belly? You won't look obese, you'll just look jiggly and fluffy in all the right places."
+          ],
+          "points": {
+            "power": 2
+          },
+          "connectedDrawback": "Fat Distribution"
+        },
+        {
+          "title": "Fat",
+          "description": [
+            "Do you wanna look totally flubbers? I can turn you into a fat mc fatty, you'll be the hottest landwhale ever!"
+          ],
+          "points": {
+            "power": 10
+          },
+          "connectedDrawback": "Hungry Hippo"
+        }
+      ]
     }
   },
   "drawbacks": [
@@ -255,6 +354,105 @@
         "power": 10
       },
       "connectedChoice": "Unnatural"
+    },
+    {
+      "title": "Hairless",
+      "description": [
+        "A delicate body shouldn't be covered in disgusting body hair, don't you agree? No body hair will grow on your body."
+      ],
+      "points": {
+        "power": 3
+      },
+      "exclude": ["Hairy"],
+      "connectedChoice": "Youthful"
+    },
+    {
+      "title": "Freckles",
+      "description": [
+        "You have cute little freckles decorating your face and body! With all those spots you're almost like a human jaguar, rawr!"
+      ],
+      "points": {
+        "power": 3
+      },
+      "exclude": [],
+      "connectedChoice": "Petite"
+    },
+    {
+      "title": "Plump Lips",
+      "description": [
+        "How about some big plump pillowy kissable lips? They will wrap around a cock nicely, perfect for cock sucking!"
+      ],
+      "points": {
+        "power": 7
+      },
+      "exclude": [],
+      "connectedChoice": "Curvacious"
+    },
+    {
+      "title": "Basic Bitch",
+      "description": [
+        "You gain the taste of a basic bitch. For example, you will only enjoy mainstream movies and missionary is now your favorite sex position, anything beyond missionary is disgusting to you, especially anal."
+      ],
+      "points": {
+        "power": 10
+      },
+      "exclude": [],
+      "connectedChoice": "Average"
+    },
+    {
+      "title": "Workout Whore",
+      "description": [
+        "Now you will need to exercise at least 5 hours per week to maintain your body figure. Working out will always make you really horny."
+      ],
+      "points": {
+        "power": 8
+      },
+      "exclude": ["Chubby", "Fat", "Fat Distribution"],
+      "connectedChoice": "Fit"
+    },
+    {
+      "title": "Hairy",
+      "description": [
+        "Your crotch and armpits are hairy. If you cut or remove any hair from these regions it will instantly grow back."
+      ],
+      "points": {
+        "power": 5
+      },
+      "exclude": ["Hairless"],
+      "connectedChoice": "Muscular"
+    },
+    {
+      "title": "Crossdresser",
+      "description": [
+        "Whenever you wear clothes designed for your gender you will feel super uncomfortable. You will only want to wear the opposite gender's clothes."
+      ],
+      "points": {
+        "power": 10
+      },
+      "exclude": [],
+      "connectedChoice": "Androgenous"
+    },
+    {
+      "title": "Fat Distribution",
+      "description": [
+        "You can gain and lose excess fat, all the extra fat you gain will go straight into your tits, ass or thighs, your choice."
+      ],
+      "points": {
+        "power": 5
+      },
+      "exclude": ["Workout Whore"],
+      "connectedChoice": "Chubby"
+    },
+    {
+      "title": "Hungry Hippo",
+      "description": [
+        "You will need to eat 5 times as much as a regular human of your size and you also eat like a total slob. You'll spill food and drink everywhere."
+      ],
+      "points": {
+        "power": 10
+      },
+      "exclude": [],
+      "connectedChoice": "Fat"
     }
   ],
   "skeletons": {
@@ -276,6 +474,17 @@
       "points": {
         "power": 0
       },
+      "connectedChoice": ""
+    },
+    "drawback_with_exclusions": {
+      "title": "",
+      "description": [
+        ""
+      ],
+      "points": {
+        "power": 0
+      },
+      "exclude": [""],
       "connectedChoice": ""
     }
   }
