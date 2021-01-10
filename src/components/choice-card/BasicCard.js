@@ -7,6 +7,7 @@ import {
   setBodyFigure,
   setBodySize,
   setBreastSize,
+  setButtSize,
   setGender,
   setHairColor,
   updateDrawbacks,
@@ -28,12 +29,12 @@ const actionsByLocation = {
   body_figure: setBodyFigure,
   body_size: setBodySize,
   breast_size: setBreastSize,
+  butt_size: setButtSize,
 };
 
 const BasicCard = ({ title, id, ...otherProps }) => {
   const dispatch = useDispatch();
   const drawback = useSelector((state) => {
-    console.log(state);
     return find(state.data.drawbacks, (drawback) =>
       drawback?.connectedChoiceIDs.includes(id)
     );
@@ -56,9 +57,6 @@ const BasicCard = ({ title, id, ...otherProps }) => {
           {...otherProps}
         />
       </Grid>
-      {/* <Grid item xs={12}>
-        <Divider />
-      </Grid> */}
       <Grid item xs={12}>
         <CardStructure
           handleClick={() => dispatch(updateDrawbacks(drawback))}

@@ -49,6 +49,11 @@ export const choicesSlice = createSlice({
         power: 0,
       },
     },
+    butt_size: {
+      points: {
+        power: 0,
+      },
+    },
     drawbacks: [],
   },
   reducers: {
@@ -84,6 +89,9 @@ export const choicesSlice = createSlice({
         state
       );
     },
+    setButtSize: (state, action) => {
+      state.butt_size = action.payload;
+    },
     updateDrawbacks: (state, action) => {
       const titles = state.drawbacks.map((drawback) => drawback.title);
       if (titles.includes(action.payload.title)) {
@@ -107,6 +115,7 @@ export const {
   setBodyFigure,
   setBodySize,
   setBreastSize,
+  setButtSize,
   updateDrawbacks,
 } = choicesSlice.actions;
 

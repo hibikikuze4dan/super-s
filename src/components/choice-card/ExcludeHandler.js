@@ -22,7 +22,7 @@ const ExcludeHandler = ({ excludes, requires }) => {
       {theRequired.map((requirement, index) => {
         return (
           <Fragment key={`${requirement}-${index}`}>
-            {index === theRequired.length - 1 && " or "}
+            {index === theRequired.length - 1 && index !== 0 && " or "}
             <span style={{ color: "red" }}>{requirement}</span>
             {index !== theRequired.length - 1 && ", "}
           </Fragment>

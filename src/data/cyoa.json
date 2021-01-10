@@ -412,6 +412,81 @@
           "connectedDrawback": "Inverted Nipples"
         }
       ]
+    },
+    "butt_size": {
+      "title": "Butt Size",
+      "description": [
+        "How about some junk in the trunk or perhaps you prefer a teeny-tiny teen ass?"
+      ],
+      "cols": 3,
+      "choices": [
+        {
+          "title": "Tiny Ass",
+          "id": 33,
+          "description": [
+            "You'll have a tiny ass, a perfect choice if you're going for that classic jail bait look!"
+          ],
+          "points": {
+            "power": 2
+          },
+          "connectedDrawback": "Anal Hater"
+        },
+        {
+          "title": "Small Ass",
+          "id": 34,
+          "description": [
+            "Your behind will be a bit bigger and a bit less boney, but it won't be as cute as a tiny ass!"
+          ],
+          "points": {
+            "power": 1
+          },
+          "connectedDrawback": "Anal Hater"
+        },
+        {
+          "title": "Medium Ass",
+          "id": 35,
+          "description": [
+            "A medium-sized ass is a lot more well defined than the previous option, but also a bit more boring if you ask me."
+          ],
+          "points": {
+            "power": 0
+          },
+          "connectedDrawback": "Sensitive Butt"
+        },
+        {
+          "title": "Large Ass",
+          "id": 36,
+          "description": [
+            "You're gonna have a big slappable bubble butt, it will look as if it was sculpted by a Goddess. I guess it technically is..."
+          ],
+          "points": {
+            "power": 1
+          },
+          "connectedDrawback": "Puffy Anus"
+        },
+        {
+          "title": "Big Ass",
+          "id": 37,
+          "description": [
+            "Heads are going to turn and lips are going to get bitten when you walk by with your glorious ass."
+          ],
+          "points": {
+            "power": 2
+          },
+          "connectedDrawback": "Buttslut"
+        },
+        {
+          "title": "Super Ass",
+          "id": 38,
+          "description": [
+            "Your ass will literally be a super ass. It will be thicker than the most ponderous of tomes."
+          ],
+          "points": {
+            "power": 8
+          },
+          "connectedDrawback": "Puffy Pussy"
+        }
+      ]
     }
   },
   "drawbacks": [
@@ -744,6 +819,71 @@
       "exclude": ["Flat"],
       "connectedChoices": ["Super Tits"],
       "connectedChoiceIDs": [32]
+    },
+    {
+      "title": "Anal Hater",
+      "description": [
+        "Your anus feels absolutely amazing to fuck. However, anal stimulation is outright painful for you. You won't be able to enjoy anal sex unless you're a huge masochist. Not only is the penetration painful, but the pain will linger, it will make you walk funny for a couple of days afterward."
+      ],
+      "points": {
+        "power": 10
+      },
+      "required": [],
+      "exclude": ["Buttslut"],
+      "connectedChoices": ["Tiny Ass", "Small Ass"],
+      "connectedChoiceIDs": [33, 34]
+    },
+    {
+      "title": "Sensitive Butt",
+      "description": [
+        "Your butt is very sensitive, spanking will feel much more intense. When spanked, your bodily orifices will temporarily become tighter and spanking marks will also last much much longer."
+      ],
+      "points": {
+        "power": 7
+      },
+      "required": [],
+      "exclude": [],
+      "connectedChoices": ["Medium Ass"],
+      "connectedChoiceIDs": [35]
+    },
+    {
+      "title": "Puffy Anus",
+      "description": [
+        "Your anus is big and puffy. Your ring muscle will naturally squeeze anything that enters it. I hope you weren't planning on wearing anything skintight, cause such apparel wouldn't be able to hide your protruding donut anus."
+      ],
+      "points": {
+        "power": 8
+      },
+      "required": [],
+      "exclude": [],
+      "connectedChoices": ["Large Ass"],
+      "connectedChoiceIDs": [36]
+    },
+    {
+      "title": "Buttslut",
+      "description": [
+        "Getting penetrated in the ass will make you cum like crazy, once you have tried it you will become addicted to it. Abstaining from anal stimulation will decrease your thirst for butt sex."
+      ],
+      "points": {
+        "power": 10
+      },
+      "required": [],
+      "exclude": ["Anal Hater"],
+      "connectedChoices": ["Big Ass"],
+      "connectedChoiceIDs": [37]
+    },
+    {
+      "title": "Puffy Pussy",
+      "description": [
+        "You will have a huge puffy pussy. Your cunt cushion will tightly wrap around any cock and make vaginal penetration more pleasurable. However, wearing yoga pants or anything remotely tight will always give you a huge camel toe."
+      ],
+      "points": {
+        "power": 8
+      },
+      "required": ["Vagina"],
+      "exclude": [],
+      "connectedChoices": ["Super Ass"],
+      "connectedChoiceIDs": [38]
     }
   ],
   "skeletons": {
