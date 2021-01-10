@@ -16,6 +16,7 @@
       "choices": [
         {
           "title": "Female",
+          "id": 1,
           "description": [
             "I don't do makeovers half-heartedly so I will not turn you into a girl, I will turn you into THE GIRL, your beauty will be divine. As a girl, you will inspire lust and desire in all who gaze upon you. Everyone will want you, yeah that means the supervillains, especially the supervillains. They will want to rape and ravage you. No, sorry, I won't settle for anything less than divine beauty! If this option caused you to change gender you gain 10 additional Power Points."
           ],
@@ -26,6 +27,7 @@
         },
         {
           "title": "Male",
+          "id": 2,
           "description": [
             "Yeah, and there is also the option to be a man... It's not like I don't like men but let's just say I enjoy their penises a lot more than I enjoy their looks. I'm also not very good at flesh sculpting males, I won't be able to make you as beautiful as if you chose to be a girl, but l'll do my best. Which will probably make you the best looking man on the planet, but your looks won't be like divine or anything. If this option caused you to change gender you gain 10 additional Power Points."
           ],
@@ -45,6 +47,7 @@
       "choices": [
         {
           "title": "Human",
+          "id": 3,
           "description": [
             "Seriously? Do you want to be a boring human? What's the point in being a superhero if you're just going to look like everyone else. Stop being lame!"
           ],
@@ -55,6 +58,7 @@
         },
         {
           "title": "Metahuman",
+          "id": 4,
           "description": [
             "You must choose to gain at least 1 minor biologically impossible body feature. For example, your hair is made out of slime, your eyes glow red or your hair is made out of harmless fire."
           ],
@@ -65,6 +69,7 @@
         },
         {
           "title": "Humanoid",
+          "id": 5,
           "description": [
             "What about some non-human features? You can choose any non-human features you want, but must choose at least 1 feature. Like squirrel ears and a tail, vampire fangs, elf ears, antennas or tentacle hair."
           ],
@@ -84,6 +89,7 @@
       "choices": [
         {
           "title": "Blonde",
+          "id": 6,
           "description": [
             "Blondes are often thought of as party girls. Seen as happy, cheerful, fun and social. However, they are also seen as vain, dumb and promiscuous compared to other hair colors. Totally undeserved if you ask me!"
           ],
@@ -94,6 +100,7 @@
         },
         {
           "title": "Brown",
+          "id": 7,
           "description": [
             "Brunettes have a reputation for being sophisticated, intelligent and mature. But they are also viewd as boring and plain compared to their blonde, red, white and raven-haired counterparts."
           ],
@@ -104,6 +111,7 @@
         },
         {
           "title": "Black",
+          "id": 8,
           "description": [
             "Mysterious, exotic and reserved are just some traits that are associated with black hair. On the other hand, black haired people are thought to be more untrustworthy, cold and ruthless than people of other hair colors."
           ],
@@ -114,6 +122,7 @@
         },
         {
           "title": "Red",
+          "id": 9,
           "description": [
             "People tend to see redheads as unique, interesting, passionate, loving and sensual! On the other hand, they get a bad rap for being aggressive and promiscuous."
           ],
@@ -124,6 +133,7 @@
         },
         {
           "title": "White",
+          "id": 10,
           "description": [
             "White hair is associated with purity, virtue, wisdom and maturity. However white haired people are also viewed as cold, distant and introvert."
           ],
@@ -134,6 +144,7 @@
         },
         {
           "title": "Unnatural",
+          "id": 11,
           "description": [
             "Why settle for a mortal hair color? You can have any hair color you want! Pink hair, blue hair, green hair or why not rainbow colored hair? The sky is the limit!"
           ],
@@ -153,6 +164,7 @@
       "choices": [
         {
           "title": "Youthful",
+          "id": 12,
           "description": [
             "I can make you look super young and cute! You will be so adorable, just imagining it makes me want to pinch your little checks and hug you. On the downside, this body type will make bad guys want to do a lot more unsavory things to you than pinch your checks."
           ],
@@ -163,6 +175,7 @@
         },
         {
           "title": "Petite",
+          "id": 13,
           "description": [
             "How about I make you thin, lithe, delicate and dainty? You'll be the pinnacle of elegance and femininity, a statue of beauty! Your thin frame will make you look vulnerable, yet strong and courageous!"
           ],
@@ -173,6 +186,7 @@
         },
         {
           "title": "Curvacious",
+          "id": 14,
           "description": [
             "What about sexy? I could make your body voluptuous, lush, seductive and sultry. You will have curves at all the right places, thin waist, big hips, you know the deal, you'll be a total sex bomb. No one would be able to resist your ample body."
           ],
@@ -183,6 +197,7 @@
         },
         {
           "title": "Average",
+          "id": 15,
           "description": [
             "I call this body type the average body type since most people have this kind of body shape. But trust me, honey, I will make you look anything but average."
           ],
@@ -193,6 +208,7 @@
         },
         {
           "title": "Fit",
+          "id": 16,
           "description": [
             "Would you like to have a slim, athletic, well-toned body? You will look strong and yet agile."
           ],
@@ -203,6 +219,7 @@
         },
         {
           "title": "Muscular",
+          "id": 17,
           "description": [
             "How about some big bulging muscles? How about a lot of big bulging muscles? I could give your body a herculean build that radiates strength and power."
           ],
@@ -213,6 +230,7 @@
         },
         {
           "title": "Androgenous",
+          "id": 18,
           "description": [
             "Wanna look feminine and masculine at the same time? People will have a hard time discerning your true gender."
           ],
@@ -223,6 +241,7 @@
         },
         {
           "title": "Chubby",
+          "id": 19,
           "description": [
             "How about some jelly on the belly? You won't look obese, you'll just look jiggly and fluffy in all the right places."
           ],
@@ -233,6 +252,7 @@
         },
         {
           "title": "Fat",
+          "id": 20,
           "description": [
             "Do you wanna look totally flubbers? I can turn you into a fat mc fatty, you'll be the hottest landwhale ever!"
           ],
@@ -252,6 +272,7 @@
       "choices": [
         {
           "title": "Tiny",
+          "id": 21,
           "description": [
             "It would be really adorable if you were super tiny like a fairy. It might be a bit hard to fight crime being the size of a doll, but it definitely would look cute as fuck!"
           ],
@@ -262,6 +283,7 @@
         },
         {
           "title": "Small",
+          "id": 22,
           "description": [
             "Perhaps you want to be a bit taller? How about the size of a small child? It would make you really approachable, but some might not take you seriously because of your height... or lack of it."
           ],
@@ -272,6 +294,7 @@
         },
         {
           "title": "Short",
+          "id": 23,
           "description": [
             "How about being shorter than the average person of your gender? Bigger is not always better. Smaller is cuter you know!"
           ],
@@ -282,6 +305,7 @@
         },
         {
           "title": "Average",
+          "id": 24,
           "description": [
             "Really? You want to be average-sized for your gender? That's soooo boring! But I guess it would be easier to keep your identity hidden if you didn't have some crazy height that made you stand out."
           ],
@@ -292,6 +316,7 @@
         },
         {
           "title": "Tall",
+          "id": 25,
           "description": [
             "Would you like to be really tall? You could be tall like an amazonian warrior, you would stand head and shoulders above the tallest of men. Being this tall would make you a bit intimidating to approach."
           ],
@@ -302,6 +327,7 @@
         },
         {
           "title": "Colossal",
+          "id": 26,
           "description": [
             "I have this crazy idea, how about I make you big as a giant? That's like twice the size of a human. You would tower over your fellow men. I think it's really fitting for a superhero since they should be larger than life."
           ],
@@ -309,6 +335,81 @@
             "power": 8
           },
           "connectedDrawback": "Dominant"
+        }
+      ]
+    },
+    "breast_size": {
+      "title": "Breast Size",
+      "description": [
+        "What about tits? Specifically, your tits, do you like em big or small? Since I am a generous and merciful goddess, your tits won't cause you any back pains or problems with your back, no matter how big they are."
+      ],
+      "cols": 3,
+      "choices": [
+        {
+          "title": "Flat",
+          "id": 27,
+          "description": [
+            "Do you want to be flat as a little girl? Being flat-chested looks best when you're either male or have a young or petite body."
+          ],
+          "points": {
+            "power": 2
+          },
+          "connectedDrawback": "Breast Envy"
+        },
+        {
+          "title": "Small Tits",
+          "id": 28,
+          "description": [
+            "I can give you small and cutesy tits! How about that? You'll have the cutest tits around!"
+          ],
+          "points": {
+            "power": 1
+          },
+          "connectedDrawback": "Breast Envy"
+        },
+        {
+          "title": "Medium Tits",
+          "id": 29,
+          "description": [
+            "Please don't tell me you want to have boring medium-sized tits like most girls have. Do you want your action figures to sell or not?"
+          ],
+          "points": {
+            "power": 0
+          },
+          "connectedDrawback": "Erogenous Nipples"
+        },
+        {
+          "title": "Large Tits",
+          "id": 30,
+          "description": [
+            "You will have really big tits, but you could always go bigger you know. You shouldn't half-ass tits, like either go super big or go flat."
+          ],
+          "points": {
+            "power": 1
+          },
+          "connectedDrawback": "Fuckable Nipples"
+        },
+        {
+          "title": "Big Tits",
+          "id": 31,
+          "description": [
+            "Now we are talking, tits this big is really jiggly, bouncy and squishy, perfect for a superheroine!"
+          ],
+          "points": {
+            "power": 2
+          },
+          "connectedDrawback": "Lactation"
+        },
+        {
+          "title": "Super Tits",
+          "id": 32,
+          "description": [
+            "You'll have the breastest breasts! Your bountiful chest is guaranteed to give you lots of news coverage and adoring fans!"
+          ],
+          "points": {
+            "power": 6
+          },
+          "connectedDrawback": "Inverted Nipples"
         }
       ]
     }
@@ -322,7 +423,8 @@
       "points": {
         "power": 8
       },
-      "connectedChoices": "Female"
+      "connectedChoices": "Female",
+      "connectedChoiceIDs": [1]
     },
     {
       "title": "Chivalrous",
@@ -332,7 +434,8 @@
       "points": {
         "power": 10
       },
-      "connectedChoices": "Male"
+      "connectedChoices": "Male",
+      "connectedChoiceIDs": [2]
     },
     {
       "title": "Unnatural Skin Color",
@@ -342,7 +445,8 @@
       "points": {
         "power": 8
       },
-      "connectedChoices": "Human"
+      "connectedChoices": "Human",
+      "connectedChoiceIDs": [3]
     },
     {
       "title": "Otherworldly",
@@ -352,7 +456,8 @@
       "points": {
         "power": 15
       },
-      "connectedChoices": "Metahuman"
+      "connectedChoices": "Metahuman",
+      "connectedChoiceIDs": [4]
     },
     {
       "title": "Animal Genitals",
@@ -362,7 +467,8 @@
       "points": {
         "power": 10
       },
-      "connectedChoices": "Humanoid"
+      "connectedChoices": "Humanoid",
+      "connectedChoiceIDs": [5]
     },
     {
       "title": "Airhead",
@@ -372,7 +478,8 @@
       "points": {
         "power": 12
       },
-      "connectedChoices": "Blonde"
+      "connectedChoices": "Blonde",
+      "connectedChoiceIDs": [6]
     },
     {
       "title": "Four Eyes",
@@ -382,7 +489,8 @@
       "points": {
         "power": 7
       },
-      "connectedChoices": "Brown"
+      "connectedChoices": "Brown",
+      "connectedChoiceIDs": [7]
     },
     {
       "title": "Sadist",
@@ -392,7 +500,8 @@
       "points": {
         "power": 10
       },
-      "connectedChoices": "Black"
+      "connectedChoices": "Black",
+      "connectedChoiceIDs": [8]
     },
     {
       "title": "Slut",
@@ -402,7 +511,8 @@
       "points": {
         "power": 10
       },
-      "connectedChoices": "Red"
+      "connectedChoices": "Red",
+      "connectedChoiceIDs": [9]
     },
     {
       "title": "Emotionless",
@@ -412,7 +522,8 @@
       "points": {
         "power": 10
       },
-      "connectedChoices": "White"
+      "connectedChoices": "White",
+      "connectedChoiceIDs": [10]
     },
     {
       "title": "Daddy Issues",
@@ -422,7 +533,8 @@
       "points": {
         "power": 10
       },
-      "connectedChoices": "Unnatural"
+      "connectedChoices": "Unnatural",
+      "connectedChoiceIDs": [11]
     },
     {
       "title": "Hairless",
@@ -433,7 +545,8 @@
         "power": 3
       },
       "exclude": ["Hairy"],
-      "connectedChoices": "Youthful"
+      "connectedChoices": "Youthful",
+      "connectedChoiceIDs": [12]
     },
     {
       "title": "Freckles",
@@ -444,7 +557,8 @@
         "power": 3
       },
       "exclude": [],
-      "connectedChoices": "Petite"
+      "connectedChoices": "Petite",
+      "connectedChoiceIDs": [13]
     },
     {
       "title": "Plump Lips",
@@ -455,7 +569,8 @@
         "power": 7
       },
       "exclude": [],
-      "connectedChoices": "Curvacious"
+      "connectedChoices": "Curvacious",
+      "connectedChoiceIDs": [14]
     },
     {
       "title": "Basic Bitch",
@@ -466,7 +581,8 @@
         "power": 10
       },
       "exclude": [],
-      "connectedChoices": "Average"
+      "connectedChoices": "Average",
+      "connectedChoiceIDs": [15]
     },
     {
       "title": "Workout Whore",
@@ -477,7 +593,8 @@
         "power": 8
       },
       "exclude": ["Chubby", "Fat", "Fat Distribution"],
-      "connectedChoices": "Fit"
+      "connectedChoices": "Fit",
+      "connectedChoiceIDs": [16]
     },
     {
       "title": "Hairy",
@@ -488,7 +605,8 @@
         "power": 5
       },
       "exclude": ["Hairless"],
-      "connectedChoices": "Muscular"
+      "connectedChoices": "Muscular",
+      "connectedChoiceIDs": [17]
     },
     {
       "title": "Crossdresser",
@@ -499,7 +617,8 @@
         "power": 10
       },
       "exclude": [],
-      "connectedChoices": "Androgenous"
+      "connectedChoices": "Androgenous",
+      "connectedChoiceIDs": [18]
     },
     {
       "title": "Fat Distribution",
@@ -510,7 +629,8 @@
         "power": 5
       },
       "exclude": ["Workout Whore"],
-      "connectedChoices": "Chubby"
+      "connectedChoices": "Chubby",
+      "connectedChoiceIDs": [19]
     },
     {
       "title": "Hungry Hippo",
@@ -521,7 +641,8 @@
         "power": 10
       },
       "exclude": [],
-      "connectedChoices": "Fat"
+      "connectedChoices": "Fat",
+      "connectedChoiceIDs": [20]
     },
     {
       "title": "Submissive",
@@ -532,7 +653,8 @@
         "power": 10
       },
       "exclude": ["Dominant", "Switch"],
-      "connectedChoices": ["Tiny", "Small", "Short"]
+      "connectedChoices": ["Tiny", "Small", "Short"],
+      "connectedChoiceIDs": [21, 22, 23]
     },
     {
       "title": "Switch",
@@ -543,7 +665,8 @@
         "power": 10
       },
       "exclude": ["Submissive", "Dominant"],
-      "connectedChoices": ["Average"]
+      "connectedChoices": ["Average"],
+      "connectedChoiceIDs": [24]
     },
     {
       "title": "Dominant",
@@ -554,7 +677,73 @@
         "power": 10
       },
       "exclude": ["Submissive", "Switch"],
-      "connectedChoices": ["Tall", "Colossal"]
+      "connectedChoices": ["Tall", "Colossal"],
+      "connectedChoiceIDs": [25,26]
+    },
+    {
+      "title": "Breast Envy",
+      "description": [
+        "You're going to be super jealous of girls with bigger boobs than you. Watching their bigger bouncier tits jiggle in front of you will make you angry, envious and extremely insecure about your own tits. The bigger the tits are the bigger your reaction will be."
+      ],
+      "points": {
+        "power": 10
+      },
+      "required": ["Flat", "Small Tits", "Medium Tits"],
+      "exclude": [],
+      "connectedChoices": ["Flat", "Small Tits"],
+      "connectedChoiceIDs": [27, 28]
+    },
+    {
+      "title": "Erogenous Nipples",
+      "description": [
+        "Your nipples are now really sensitive and an erogenous zone. Continuous stimulation will make you climax. I recommend wearing pasties over your nipples to keep your nipples from rubbing against your bra."
+      ],
+      "points": {
+        "power": 10
+      },
+      "required": [],
+      "exclude": [],
+      "connectedChoices": ["Medium Tits"],
+      "connectedChoiceIDs": [29]
+    },
+    {
+      "title": "Fuckable Nipples",
+      "description": [
+        "Your nipples are stretchy enough to be fuckable and oh boy it will feel good to fuck them!"
+      ],
+      "points": {
+        "power": 7
+      },
+      "required": [],
+      "exclude": ["Flat"],
+      "connectedChoices": ["Large Tits"],
+      "connectedChoiceIDs": [30]
+    },
+    {
+      "title": "Lactation",
+      "description": [
+        "You'll need to milk your breasts on a daily basis or your tits are going to swell and feel sore."
+      ],
+      "points": {
+        "power": 10
+      },
+      "required": [],
+      "exclude": ["Flat"],
+      "connectedChoices": ["Big Tits"],
+      "connectedChoiceIDs": [31]
+    },
+    {
+      "title": "Inverted Nipples",
+      "description": [
+        "Whenever your nipples are not erect their inverted, hidden inside your big fat tiddies!"
+      ],
+      "points": {
+        "power": 7
+      },
+      "required": [],
+      "exclude": ["Flat"],
+      "connectedChoices": ["Super Tits"],
+      "connectedChoiceIDs": [32]
     }
   ],
   "skeletons": {

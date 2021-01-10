@@ -10,7 +10,8 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getGenderChange, updateGenderChange } from "../../../app/choicesSlice";
+import { updateGenderChange } from "../../../app/choicesSlice";
+import { getGenderChange } from "../../../app/selectors";
 
 export const GenderChange = () => {
   const dispatch = useDispatch();

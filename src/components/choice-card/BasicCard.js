@@ -3,18 +3,21 @@ import { find } from "lodash";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getChoicesExcludingSectionSpecificAsFlatArray,
-  getCurrentLocationsChoicesAsArray,
-  getDrawbacks,
   setAppearance,
   setBodyFigure,
   setBodySize,
+  setBreastSize,
   setGender,
   setHairColor,
   updateDrawbacks,
 } from "../../app/choicesSlice";
+import {
+  getChoicesExcludingSectionSpecificAsFlatArray,
+  getCurrentLocationsChoicesAsArray,
+  getDrawbacks,
+} from "../../app/selectors";
 import { getLocation } from "../../app/navigationSlice";
-import { getTitles } from "../../utils";
+import { getTitles, checkIfDisabled } from "../../utils";
 
 import CardStructure from "./CardStructure";
 
@@ -24,26 +27,17 @@ const actionsByLocation = {
   hair_color: setHairColor,
   body_figure: setBodyFigure,
   body_size: setBodySize,
+  breast_size: setBreastSize,
 };
 
-const checkIfDisabled = (drawback, currentChoices) => {
-  if (
-    drawback?.exclude?.length === 0 ||
-    drawback?.exclude?.length === undefined
-  ) {
-    return false;
-  }
-  const currentChoicesTitles = currentChoices.map((choice) => choice.title);
-  return drawback.exclude.some((ex) => currentChoicesTitles.includes(ex));
-};
-
-const BasicCard = ({ title, ...otherProps }) => {
+const BasicCard = ({ title, id, ...otherProps }) => {
   const dispatch = useDispatch();
-  const drawback = useSelector((state) =>
-    find(state.data.drawbacks, (drawback) =>
-      drawback?.connectedChoices.includes(title)
-    )
-  );
+  const drawback = useSelector((state) => {
+    console.log(state);
+    return find(state.data.drawbacks, (drawback) =>
+      drawback?.connectedChoiceIDs.includes(id)
+    );
+  });
   const currentDrawbacks = useSelector(getDrawbacks);
   const location = useSelector(getLocation);
   const currentLocationChoices = useSelector(getCurrentLocationsChoicesAsArray);
@@ -56,7 +50,7 @@ const BasicCard = ({ title, ...otherProps }) => {
         <CardStructure
           title={title}
           handleClick={() =>
-            dispatch(actionsByLocation[location]({ title, ...otherProps }))
+            dispatch(actionsByLocation[location]({ title, id, ...otherProps }))
           }
           picked={getTitles(currentLocationChoices).includes(title)}
           {...otherProps}

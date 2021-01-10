@@ -1,6 +1,17 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
-import { reduce, last, sum, flatMap, map } from "lodash";
-import { getLocation } from "./navigationSlice";
+
+const updateDrawbbacksBasedOnExcludeAndRequire = (payload, state) => {
+  return [
+    ...state.drawbacks.filter((drawback) => {
+      const exclude = drawback?.exclude || [];
+      const require = drawback?.required || [];
+      if (exclude.length === 0) {
+        return require.includes(payload.title);
+      }
+      return !exclude.includes(payload.title);
+    }),
+  ];
+};
 
 export const choicesSlice = createSlice({
   name: "choices",
@@ -33,6 +44,11 @@ export const choicesSlice = createSlice({
         power: 0,
       },
     },
+    breast_size: {
+      points: {
+        power: 0,
+      },
+    },
     drawbacks: [],
   },
   reducers: {
@@ -53,9 +69,20 @@ export const choicesSlice = createSlice({
     },
     setBodyFigure: (state, action) => {
       state.body_figure = action.payload;
+      state.drawbacks = updateDrawbbacksBasedOnExcludeAndRequire(
+        action.payload,
+        state
+      );
     },
     setBodySize: (state, action) => {
       state.body_size = action.payload;
+    },
+    setBreastSize: (state, action) => {
+      state.breast_size = action.payload;
+      state.drawbacks = updateDrawbbacksBasedOnExcludeAndRequire(
+        action.payload,
+        state
+      );
     },
     updateDrawbacks: (state, action) => {
       const titles = state.drawbacks.map((drawback) => drawback.title);
@@ -79,184 +106,8 @@ export const {
   setHairColor,
   setBodyFigure,
   setBodySize,
+  setBreastSize,
   updateDrawbacks,
 } = choicesSlice.actions;
-
-export const getSectionSpecific = (state) => state.choices.sectionSpecific;
-
-export const getGenderChange = createSelector(
-  getSectionSpecific,
-  (sectionSpecific) => {
-    return sectionSpecific.genderChange;
-  }
-);
-
-export const getChoices = (state) => state.choices;
-
-export const getChoicesExcludingSectionSpecific = createSelector(
-  getChoices,
-  (choices) => {
-    const filters = ["sectionSpecific"];
-    return reduce(
-      choices,
-      (acc, choiceSection, key) => {
-        if (!filters.includes(key)) {
-          acc[key] = choiceSection;
-        }
-        return acc;
-      },
-      {}
-    );
-  }
-);
-
-export const getChoicesExcludingDrawbacks = createSelector(
-  getChoices,
-  (choices) => {
-    const filters = ["drawbacks", "sectionSpecific"];
-    return reduce(
-      choices,
-      (acc, choiceSection, key) => {
-        if (!filters.includes(key)) {
-          acc[key] = choiceSection;
-        }
-        return acc;
-      },
-      {}
-    );
-  }
-);
-
-export const getChoicesExcludingSpecialSections = createSelector(
-  getChoices,
-  (choices) => {
-    const filters = ["drawbacks", "sectionSpecific", "gender"];
-    return reduce(
-      choices,
-      (acc, choiceSection, key) => {
-        if (!filters.includes(key)) {
-          acc[key] = choiceSection;
-        }
-        return acc;
-      },
-      {}
-    );
-  }
-);
-
-export const getChoicesExcludingSectionSpecificAsFlatArray = createSelector(
-  getChoicesExcludingSectionSpecific,
-  (choices) => {
-    return flatMap(choices, (choiceSection) => {
-      return Array.isArray(choiceSection) ? choiceSection : [choiceSection];
-    });
-  }
-);
-
-export const getChoicesExcludingDrawbacksAsFlatArray = createSelector(
-  getChoicesExcludingDrawbacks,
-  (choices) => {
-    return flatMap(choices, (choiceSection) => {
-      return Array.isArray(choiceSection) ? choiceSection : [choiceSection];
-    });
-  }
-);
-
-export const getChoicesExcludingSpecialSectionsAsFlatArray = createSelector(
-  getChoicesExcludingSpecialSections,
-  (choices) => {
-    return flatMap(choices, (choiceSection) => {
-      return Array.isArray(choiceSection) ? choiceSection : [choiceSection];
-    });
-  }
-);
-
-export const getGender = (state) => state.choices.gender;
-
-export const getAppearance = (state) => state.choices.appearance;
-
-export const getHairColor = (state) => state.choices.hair_color;
-
-export const getBodyFigure = (state) => state.choices.body_figure;
-
-export const getBodySize = (state) => state.choices.body_size;
-
-export const getDrawbacks = (state) => state.choices.drawbacks;
-
-export const getCurrentLocationsChoices = createSelector(
-  getChoices,
-  getLocation,
-  (choices, location) => {
-    return choices[location] || [];
-  }
-);
-
-export const getCurrentLocationsChoicesAsArray = createSelector(
-  getCurrentLocationsChoices,
-  (currentChoices) => {
-    return Array.isArray(currentChoices) ? currentChoices : [currentChoices];
-  }
-);
-
-const genderPointsHandler = createSelector(
-  getGender,
-  getGenderChange,
-  (gender, isChangingGender) => {
-    if (isChangingGender && gender?.title) {
-      return gender.points.power + 10;
-    }
-    return gender.points.power;
-  }
-);
-
-const drawbacksPointHandler = createSelector(
-  getDrawbacks,
-  getChoicesExcludingDrawbacksAsFlatArray,
-  (drawbacks, choicesExcludingDrawbacks) => {
-    const choicesExcludingDrawbacksTitles = choicesExcludingDrawbacks.map(
-      (choice) => choice.title
-    );
-    return sum(
-      drawbacks.map((drawback) => {
-        if (
-          choicesExcludingDrawbacksTitles.includes(drawback.connectedChoices) ||
-          drawback.connectedChoices.some((connectedChoice) =>
-            choicesExcludingDrawbacksTitles.includes(connectedChoice)
-          )
-        ) {
-          return drawback.points.power + 3;
-        }
-        return drawback.points.power;
-      })
-    );
-  }
-);
-
-const getPointsFromChoice = (choice) => {
-  return choice.points;
-};
-
-const getPowerPointsForBasicSections = createSelector(
-  getChoicesExcludingSpecialSectionsAsFlatArray,
-  (choices) => {
-    return sum(map(choices, (choice) => getPointsFromChoice(choice).power));
-  }
-);
-
-const compilePoints = createSelector(
-  genderPointsHandler,
-  drawbacksPointHandler,
-  getPowerPointsForBasicSections,
-  (genderPoints, drawbackPoints, basicSectionsPoints) => {
-    return {
-      power: sum([0, genderPoints, drawbackPoints, basicSectionsPoints]),
-    };
-  }
-);
-
-export const getCompiledPoints = createSelector(
-  compilePoints,
-  (points) => points
-);
 
 export default choicesSlice.reducer;

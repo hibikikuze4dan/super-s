@@ -16,6 +16,7 @@ const CardStructure = ({
   picked,
   disabled,
   exclude,
+  required,
   ...otherProps
 }) => {
   const normalColor = isDrawback ? "#292929ff" : "black";
@@ -27,11 +28,12 @@ const CardStructure = ({
           <Grid item xs={12}>
             <Title text={title} isChoice />
           </Grid>
-          {exclude.length !== 0 && (
-            <Grid item xs={12}>
-              <ExcludeHandler excludes={exclude} />
-            </Grid>
-          )}
+          {(exclude?.length !== 0 || required?.length !== 0) &&
+            (exclude?.length || required?.length) && (
+              <Grid item xs={12}>
+                <ExcludeHandler excludes={exclude} requires={required} />
+              </Grid>
+            )}
           <Grid item xs={12}>
             <PointHandler points={points} />
           </Grid>
