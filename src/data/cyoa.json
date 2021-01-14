@@ -487,6 +487,84 @@
           "connectedDrawback": "Puffy Pussy"
         }
       ]
+    },
+    "genitals": {
+      "title": "Genitals",
+      "description": [
+        "Now what kind of genitals do you want? I know you choose a gender at the beginning of this makeover, but don't you want to spice it up a little? Like you could be a girl with a huge cock or a man with a pussy."
+      ],
+      "closer": [
+        "Almost done! I'll just fill out the blank spaces by peering through your mind and referencing your ideal appearance aaaand... Done!- Wow, just look at you! You're a total sex bomb, who could have imagined you could look so good? Let me summon a mirror for you, are you happy with the end result? Yeah, you should be, I put in a lot of work to make you look this good. I also took the liberty to remove your refractory period after sex."
+      ],
+      "cols": 3,
+      "choices": [
+        {
+          "title": "Vagina",
+          "id": 39,
+          "description": [
+            "You will have a vagina, I can make it an innie, outy or roasty pussy, whatever you want!"
+          ],
+          "points": {
+            "power": 2
+          },
+          "connectedDrawback": "Penis Vagina"
+        },
+        {
+          "title": "Small Penis",
+          "id": 40,
+          "description": [
+            "Ever wanted to have an adorably small and effeminate penis? It can be anything from a micropenis to a small-sized penis."
+          ],
+          "points": {
+            "power": 10
+          },
+          "connectedDrawback": "Premature Ejaculation"
+        },
+        {
+          "title": "Medium Penis",
+          "id": 41,
+          "description": [
+            "Would you rather have a medium-sized penis? Come on don't be boring, why would you want an average-sized penis?"
+          ],
+          "points": {
+            "power": 0
+          },
+          "connectedDrawback": "Limp Dick"
+        },
+        {
+          "title": "Large Penis",
+          "id": 42,
+          "description": [
+            "How about a large penis? Like above average-sized, it will be really big, but it won't be freak show big. Most women will be really impressed with your penis, but they won't be in penis awe. Come on, you can do better!"
+          ],
+          "points": {
+            "power": 1
+          },
+          "connectedDrawback": "Always Hard"
+        },
+        {
+          "title": "Big Penis",
+          "id": 43,
+          "description": [
+            "Or perhaps you want a bigger penis? Like really big! It will make a huge buige in your pants and it will be next to impossible to hide, even while it's flaccid. But that's part of the charm, right?"
+          ],
+          "points": {
+            "power": 3
+          },
+          "connectedDrawback": "Fuckable Peehole"
+        },
+        {
+          "title": "Super Penis",
+          "id": 44,
+          "description": [
+            "What about a super big penis? Because of its absurd size, it will inconvenience you in your everyday life and it might get in the way during your crimefighting and all but, it would totally be worth it, just trust me!"
+          ],
+          "points": {
+            "power": 8
+          },
+          "connectedDrawback": "Liquid Fountain"
+        }
+      ]
     }
   },
   "drawbacks": [
@@ -884,6 +962,88 @@
       "exclude": [],
       "connectedChoices": ["Super Ass"],
       "connectedChoiceIDs": [38]
+    },
+    {
+      "title": "Penis Vagina",
+      "description": [
+        "Why choose between having a vagina or a penis when you can have both? Choose another option in this section, yes you will gain Power Points from the penis option you choose."
+      ],
+      "points": {
+        "power": -3
+      },
+      "required": ["Vagina"],
+      "exclude": [],
+      "connectedChoices": ["Vagina"],
+      "connectedChoiceIDs": [39]
+    },
+    {
+      "title": "Premature Ejaculation",
+      "description": [
+        "When you get sexually excited you have a tendency to blow your load, so to speak. Often before you even put it in, talk about embarrassing!"
+      ],
+      "points": {
+        "power": 20
+      },
+      "required": [],
+      "exclude": ["Vagina"],
+      "exception": { "title": "Penis Vagina", "excludes": "Vagina" },
+      "customRequirementText": ["Requirement: Not Vagina or Penis Vagina"],
+      "connectedChoices": ["Small Penis"],
+      "connectedChoiceIDs": [40]
+    },
+    {
+      "title": "Limp Dick",
+      "description": [
+        "Your dick is completely limp, it cannot get erect. Beyond that, your penis works perfectly fine."
+      ],
+      "points": {
+        "power": 20
+      },
+      "required": [],
+      "exclude": ["Vagina", "Always Hard"],
+      "exception": { "title": "Penis Vagina", "excludes": "Vagina" },
+      "customRequirementText": ["Requirement: Not Vagina (or Penis Vagina) and Not Always Hard"],
+      "connectedChoices": ["Medium Penis"],
+      "connectedChoiceIDs": [41]
+    },
+    {
+      "title": "Always Hard",
+      "description": [
+        "Your cock (and/or clitoris) is perpetually erect. Whenever you get horny your erection will turn into a throbbing erection."
+      ],
+      "points": {
+        "power": 9
+      },
+      "required": [],
+      "exclude": ["Limp Dick"],
+      "connectedChoices": ["Large Penis"],
+      "connectedChoiceIDs": [42]
+    },
+    {
+      "title": "Fuckable Peehole",
+      "description": [
+        "Your urethra is now elastic and fuckable. It's quite a tight fit and will feel amazing to fuck! Are you ready to get your peehole violated?"
+      ],
+      "points": {
+        "power": 7
+      },
+      "required": [],
+      "exclude": [],
+      "connectedChoices": ["Big Penis"],
+      "connectedChoiceIDs": [43]
+    },
+    {
+      "title": "Liquid Fountain",
+      "description": [
+        "Whenever you cum you will ejaculate huge amounts of sexual fluid! Like a penis would become a cum hose during climax with this drawback."
+      ],
+      "points": {
+        "power": 10
+      },
+      "required": [],
+      "exclude": [],
+      "connectedChoices": ["Super Penis"],
+      "connectedChoiceIDs": [44]
     }
   ],
   "skeletons": {

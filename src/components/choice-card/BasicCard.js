@@ -11,6 +11,7 @@ import {
   setGender,
   setHairColor,
   updateDrawbacks,
+  updateGenitals,
 } from "../../app/choicesSlice";
 import {
   getChoicesExcludingSectionSpecificAsFlatArray,
@@ -30,6 +31,7 @@ const actionsByLocation = {
   body_size: setBodySize,
   breast_size: setBreastSize,
   butt_size: setButtSize,
+  genitals: updateGenitals,
 };
 
 const BasicCard = ({ title, id, ...otherProps }) => {

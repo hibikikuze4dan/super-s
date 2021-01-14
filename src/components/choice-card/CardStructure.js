@@ -6,6 +6,7 @@ import { lossOrGain } from "../../utils";
 import { map } from "lodash";
 import PointHandler from "./PointHandler";
 import ExcludeHandler from "./ExcludeHandler";
+import RequirementInterweave from "./RequirementInterweave";
 
 const CardStructure = ({
   title,
@@ -17,10 +18,12 @@ const CardStructure = ({
   disabled,
   exclude,
   required,
+  customRequirementText,
   ...otherProps
 }) => {
   const normalColor = isDrawback ? "#292929ff" : "black";
 
+  console.log(customRequirementText);
   return (
     <Card style={{ backgroundColor: !picked ? normalColor : "green" }}>
       <Button onClick={handleClick} disabled={disabled}>
@@ -28,8 +31,14 @@ const CardStructure = ({
           <Grid item xs={12}>
             <Title text={title} isChoice />
           </Grid>
+          {customRequirementText && (
+            <Grid item xs={12}>
+              <RequirementInterweave text={customRequirementText} />
+            </Grid>
+          )}
           {(exclude?.length !== 0 || required?.length !== 0) &&
-            (exclude?.length || required?.length) && (
+            (exclude?.length || required?.length) &&
+            !customRequirementText && (
               <Grid item xs={12}>
                 <ExcludeHandler excludes={exclude} requires={required} />
               </Grid>

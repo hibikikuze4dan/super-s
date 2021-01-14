@@ -31,6 +31,10 @@
   font-weight: bold;
 }
 
+.Interweave-Red {
+  color: red;
+}
+
 @keyframes App-logo-float {
   0% {
     transform: translateY(0);

@@ -1,14 +1,51 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
+import { reduce, flatMap } from "lodash";
 
-const updateDrawbbacksBasedOnExcludeAndRequire = (payload, state) => {
+const getChoicesExcludingDrawbacksFlattened = (choices) => {
+  const filters = ["drawbacks", "sectionSpecific"];
+  const choicesExcludingDrawbacks = reduce(
+    choices,
+    (acc, choiceSection, key) => {
+      if (!filters.includes(key)) {
+        acc[key] = choiceSection;
+      }
+      return acc;
+    },
+    {}
+  );
+  return flatMap(choicesExcludingDrawbacks, (choiceSection) => {
+    return Array.isArray(choiceSection) ? choiceSection : [choiceSection];
+  });
+};
+
+const updateDrawbbacksBasedOnExcludeAndRequire = (state) => {
+  const choicesExcludingDrawbacks = getChoicesExcludingDrawbacksFlattened(
+    state
+  ).map((choice) => choice.title);
+  console.log(state);
   return [
     ...state.drawbacks.filter((drawback) => {
       const exclude = drawback?.exclude || [];
       const require = drawback?.required || [];
-      if (exclude.length === 0) {
-        return require.includes(payload.title);
+      if (require.length === 0 && exclude.length === 0) {
+        return true;
+      } else if (exclude.length === 0) {
+        return require.some((requirement) =>
+          choicesExcludingDrawbacks.includes(requirement)
+        );
+      } else if (require.length === 0) {
+        return !exclude.some((excludement) =>
+          choicesExcludingDrawbacks.includes(excludement)
+        );
       }
-      return !exclude.includes(payload.title);
+      return (
+        !require.some((requirement) =>
+          choicesExcludingDrawbacks.includes(requirement)
+        ) &&
+        exclude.some((excludement) =>
+          choicesExcludingDrawbacks.includes(excludement)
+        )
+      );
     }),
   ];
 };
@@ -54,6 +91,7 @@ export const choicesSlice = createSlice({
         power: 0,
       },
     },
+    genitals: [],
     drawbacks: [],
   },
   reducers: {
@@ -74,23 +112,39 @@ export const choicesSlice = createSlice({
     },
     setBodyFigure: (state, action) => {
       state.body_figure = action.payload;
-      state.drawbacks = updateDrawbbacksBasedOnExcludeAndRequire(
-        action.payload,
-        state
-      );
+      state.drawbacks = updateDrawbbacksBasedOnExcludeAndRequire(state);
     },
     setBodySize: (state, action) => {
       state.body_size = action.payload;
+      state.drawbacks = updateDrawbbacksBasedOnExcludeAndRequire(state);
     },
     setBreastSize: (state, action) => {
       state.breast_size = action.payload;
-      state.drawbacks = updateDrawbbacksBasedOnExcludeAndRequire(
-        action.payload,
-        state
-      );
+      state.drawbacks = updateDrawbbacksBasedOnExcludeAndRequire(state);
     },
     setButtSize: (state, action) => {
       state.butt_size = action.payload;
+      state.drawbacks = updateDrawbbacksBasedOnExcludeAndRequire(state);
+    },
+    updateGenitals: (state, action) => {
+      const entryExists = state.genitals.some(
+        (genitalEntry) => genitalEntry.title === action.payload.title
+      );
+      const hasPenisVagina = state.drawbacks.some(
+        (drawback) => drawback.title === "Penis Vagina"
+      );
+      if (entryExists) {
+        state.genitals = [
+          ...state.genitals.filter(
+            (genitalEntry) => genitalEntry.title !== action.payload.title
+          ),
+        ];
+      } else if (hasPenisVagina) {
+        state.genitals = [action.payload, ...state.genitals];
+      } else {
+        state.genitals = [action.payload];
+      }
+      state.drawbacks = updateDrawbbacksBasedOnExcludeAndRequire(state);
     },
     updateDrawbacks: (state, action) => {
       const titles = state.drawbacks.map((drawback) => drawback.title);
@@ -116,6 +170,7 @@ export const {
   setBodySize,
   setBreastSize,
   setButtSize,
+  updateGenitals,
   updateDrawbacks,
 } = choicesSlice.actions;
 

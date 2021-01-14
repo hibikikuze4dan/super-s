@@ -16,6 +16,9 @@ const Section = () => {
       <Grid item xs={12}>
         <ChoiceList />
       </Grid>
+      <Grid item xs={12}>
+        <Opener isCloser />
+      </Grid>
     </Grid>
   );
 };
